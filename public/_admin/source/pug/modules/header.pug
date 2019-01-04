@@ -1,0 +1,45 @@
+//FIXME: Fix UI dropdown message
+header 
+    .wrapper 
+        .row.justify-space-between
+            ul.nav-left
+                li.sidebar-trigger 
+                    i.icon-menu 
+                li.search-form 
+                    .icon-search
+            ul.nav-right.gray-color
+                li.email.usable
+                    i.icon-mail
+                li.notifications.ui-dropdown.usable
+                    i.icon-notification
+                    ul.ui-dropdown-list
+                        li.ui-list-item.list-header
+                            i.icon-notification
+                            .ui-list-message 
+                                span.bold Уведомления
+                        -for(var i = 0; i < 3; i++)
+                            li.ui-list-item
+                                .ui-list-image 
+                                    img(src="source/images/male-user-profile.jpg", alt="")
+                                .ui-list-message 
+                                    span <span class="bold">EndruTobkins</span> liked your post
+                                    span Five minutes ago
+
+
+
+                li.user-profile 
+                    .user-photo 
+                        img(src="source/images/male-user-profile.jpg", alt="")
+                    span.bold.ui-dropdown.usable Hugh Jackman
+                        ul.ui-dropdown-menu
+                            li.ui-list-item 
+                                i.icon-home
+                                .ui-list-message home
+                            li.ui-list-item 
+                                i.icon-chart
+                                .ui-list-message config
+                            
+
+                
+           
+            

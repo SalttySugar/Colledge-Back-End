@@ -1,0 +1,420 @@
+
+//FIXME: For header , needed to be UNDER/ON the header line;
+
+.ui-dropdown
+{
+    position: relative;
+    line-height: 20px !important;
+    font-size: 0.8em;
+
+
+    .ui-dropdown-list, .ui-dropdown-menu
+    {
+        //FIXME: naming for states problem
+        height: 0px;
+        width: 0px;
+        overflow: hidden;
+        visibility: hidden;
+        position: absolute;
+        right: 0px;
+        top: 100%;
+        overflow: hidden;
+        background-color: #fff;
+        border: 1px solid #e1e1e1;
+        z-index: 999;
+
+        //FIXME:Transition mixin
+        transition: 0.3s all;
+
+        .ui-list-item
+        {
+            display: flex;
+            padding: 15px 15px;
+            min-height: 10px;
+            align-items: center;
+            background-color: #fff;
+            flex:  0 0 100%;
+            //FIXME: transition mixin
+            transition: 0.2s all;
+
+            &:hover
+            {
+                background-color: #fcfcfc;
+            }
+        }
+
+        .ui-list-message
+        {
+            span
+            {
+                display: block;
+            }
+
+            padding: 0 15px;
+        }
+    }
+
+
+    .ui-dropdown-list
+    {
+        border-bottom: 1px solid #e1e1e1;
+
+        .ui-list-item.list-header
+        {
+            &:hover
+            {
+                background-color: #fff;
+            }
+        }
+
+        .ui-list-item
+        {
+            display: flex;
+            border-bottom: 1px solid #e1e1e1;
+            padding: 15px 15px;
+            min-height: 10px;
+            align-items: center;
+            background-color: #fff;
+            flex:  0 0 100%;
+
+            .ui-list-image
+            {
+                width: 14%;
+                img
+                {
+                    @include border-radius(50%);
+                    display: block;
+                }
+            }
+        }
+    }
+
+
+    &.hidden
+    {
+        .ui-dropdown-list
+        {
+            height: 0px;
+            width: 0px;
+            visibility: hidden;
+        }
+
+    }
+
+    &.active
+    {
+        //FIXME: Fix adaptive-height animation
+        .ui-dropdown-list , .ui-dropdown-menu
+        {
+
+            visibility: visible;
+        }
+
+        .ui-dropdown-list
+        {
+            width: 380px;
+            height: 320px;
+        }
+
+        .ui-dropdown-menu
+        {
+            width: 150px;
+            height: 120px;
+        }
+    }
+}
+
+
+
+
+//FIXME:Fix checkbox elements
+
+
+
+label.ui-input.select
+{
+    //FIXME:Pos-rel
+    position: relative;
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    user-select: none;
+    text-align: center;
+
+    input[type="checkbox"]  , input[type="radio"]
+    {
+        //FIXME:Pos-abs
+        position: absolute;
+        height: 0px;
+        width: 0px;
+        opacity: 0;
+    }
+    span
+    {
+        //FIXME:pos-abs
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+
+        &:after
+        {
+            content: '\e800';
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            font-family: "fontello";
+            font-style: normal;
+            font-weight: normal;
+            display: none;
+        }
+    }
+
+    input:checked ~ span
+    {
+        //FIXME:Make check more realistic
+
+        &:after
+        {
+            display: inline-block;
+        }
+    }
+
+    //STYLING UI INPUTS
+    &.rounded
+    {
+        span
+        {
+            @include border-radius(50%);
+        }
+    }
+
+   &.primary
+    {
+        span
+        {
+            border: 1px solid #242424;
+            background-color: #fff;
+
+            &:hover
+            {
+                background-color: Palette('primary');
+                border-color: Palette('primary');
+            }
+        }
+
+        input:checked ~ span
+        {
+            background-color: Palette(primary);
+            border-color: Palette(primary);
+
+            &:after
+            {
+                color:#fff;
+            }
+        }
+
+    }
+    &.state
+    {
+        span
+        {
+            border: 2px solid Palette('danger') !important;
+            color: Palette('danger');
+
+            &:after
+            {
+                content: '\e80a' !important;
+                display: inline-block !important;
+            }
+        }
+
+        input:checked ~ span
+        {
+            border: 2px solid Palette('success') !important;
+            color: Palette('success');
+
+            &:after
+            {
+                content: '\e800' !important;
+            }
+        }
+    }
+}
+
+//FIXME: UI_input extention fix
+
+.ui-input.text
+{
+    input[type="text"]
+    {
+        border: transparent;
+        border-bottom: 1px solid #ddd !important;
+        border-radius: none !important;
+    }
+}
+
+.ui-input.tag-input
+.ui-input.dropdown
+{
+    //FIXME: custom select using js
+    select
+    {
+        border: none;
+        border-bottom: 1px solid #ddd;
+
+        option
+        {
+            border: none;
+        }
+    }
+}
+.ui-filtering-tool
+{
+    display: flex;
+    position: absolute;
+    width: 75%;
+    z-index: 999;
+    background-color: #fff;
+    //FIXME: shadow mixin MIXIN
+    //FIXME: fix-shadows values
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    padding: 15px;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    .ui-input
+    {
+        white-space: nowrap;
+    }
+}
+
+
+
+.ui-notification
+{
+    //FIXME: position absolute
+    position: absolute;
+    //FIXME:Priority to ui pop-up elements
+    z-index: 999;
+    min-width: 10%;
+    max-width: 60%;
+    padding: 15px;
+    //FIXME: box-shadow mixin
+    //FIXME: border-radius
+    @include border-radius(5px);
+    text-align: center;
+    span
+    {
+        display: inline-block;
+    }
+
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+
+    //COLOR modificators
+
+
+
+    &.primary
+    {
+        background-color: Palette('background-primary');
+        color: Palette('primary')
+    }
+
+    &.info
+    {
+        background-color: Palette('background-primary');
+        color: Palette('primary')
+    }
+
+    &.success
+    {
+        background-color: Palette('background-success');
+        color: Palette('success')
+    }
+
+    &.warning
+    {
+        //FIXME:warning bg fix
+        background-color: Palette('warning');
+        color: Palette('gray')
+    }
+
+    &.danger
+    {
+        background-color: Palette('background-danger');
+        color: Palette('danger')
+    }
+
+
+
+    //Position modificators
+
+    &.top
+    {
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+
+    }
+
+    &.bottom
+    {
+
+    }
+
+    //Action modificators
+
+
+}
+
+
+.ui-post-editor
+{
+    position: absolute;
+    display: flex;
+    padding: 15px;
+    background-color: #fff;
+    //FIXME: boxshadow
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    width: 65%;
+    top: 0px;
+    left: 0px;
+    //FIXME:Z-inDEX
+    z-index: 999;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50% , -50%);
+
+    label
+    {
+        //FIXME: Generic class for @INPUTS@a
+        display: block;
+        width: 100%;
+        span
+        {
+            display: block;
+            font-size: 0.7em;
+            padding: 10px 0px;
+        }
+
+        input
+        {
+            //FIXME:Carry on to UI-inputs
+            width: 100%;
+            padding: 10px 5px;
+            @include border-radius(15px)
+        }
+
+    }
+
+    //FIXME: Temporary image for post
+    .post-image
+    {
+        width: 100%;
+        height: 280px;
+        background-color: Palette('background-primary');
+    }
+}

@@ -1,0 +1,52 @@
+$padding: (
+    row    : - 15px,
+    column : 15px,
+    h1     : 5px 0px,
+    h2     : 5px 0px,
+    h3     : 5px 0px,
+    h4     : 5px 0px,
+    h5     : 5px 0px,
+    p      : 5px 0px,
+);
+
+
+$margin: (
+    row    : -15px,
+    h1     : 5px 0px,
+    h2     : 5px 0px,
+    h3     : 5px 0px,
+    h4     : 5px 0px,
+    h5     : 5px 0px,
+);
+
+
+
+$breakpoints: (
+  xs       : ( max-width: 520px ),
+  sm       :  ( min-width:  767px ),
+  md       : ( min-width:  992px ),
+  lg       :  ( min-width: 1200px )
+) !default;
+
+
+$palette: (
+    /*just a solid colros*/
+    'primary'       : #007bff,
+    'primary-hover' : #0062cc,
+    'success'       : #28a745,
+    'danger'        : #dc3545,
+    'warning'       : #ffc107,
+    'info'          : #17a2b8,
+    'purple'        : #9c27b0,
+    'gray'          : #72777a,
+    'pink'          : #ff3c7e,
+
+    /*background*/
+
+    'background-primary'    : #e3f2fd,
+    'background-success'    : #e8f5e9,
+    'background-danger'     : #ffebee,
+    'background-purple'     : #f3e5f5,
+    
+    
+);

@@ -1,0 +1,19 @@
+span.danger-badge, span.success-badge, span.warning-badge,
+span.primary-badge, span.purple-badge {
+  padding: 15px; }
+
+span.primary-badge {
+  background-color: palette(background-primary);
+  color: palette("primary"); }
+
+span.success-badge {
+  background-color: palette(background-success);
+  color: palette("success"); }
+
+span.warning-badge {
+  background-color: palette(background-warning);
+  color: palette("warning"); }
+
+span.warning-badge {
+  background-color: palette(background-danger);
+  color: palette("danger"); }

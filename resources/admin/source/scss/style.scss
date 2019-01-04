@@ -1,0 +1,295 @@
+//@import '~bootstrap/scss/bootstrap.scss';
+@import '~font-awesome/scss/font-awesome';
+
+@import 'source/vars';
+@import 'source/functions';
+@import 'source/mixins';
+@import 'source/reset';
+@import 'source/grid';
+//TEMPALTES
+@import 'templates/ui';
+@import 'templates/badges';
+@import 'templates/buttons';
+@import 'templates/forms';
+@import 'templates/header';
+@import 'templates/aside.scss';
+@import 'templates/post-table';
+
+//TINYMCE
+@import '~tinymce/skins/lightgray/content.min.css';
+@import '~tinymce/skins/lightgray/skin.min.css';
+
+
+body
+{
+    background-color: #f6f6f6;
+    color: #323232;
+    font-family: sans-serif;
+
+}
+/********RESET*********/
+
+img
+{
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    line-height: 0px;
+
+}
+
+a
+{
+    color: inherit;
+    text-decoration: none;
+}
+/**********************/
+
+/******UI ITERACTIONS*****/
+    .usable {cursor: pointer;}
+/*************************/
+
+/********FONTS*********/
+
+.primary-color  {color : Palette('primary');}
+.success-color  {color : Palette('success');}
+.warning-color  {color : Palette('warning');}
+.danger-color   {color  : Palette('danger');}
+.info-color     {color    : Palette('info');}
+.purple-color   {color  : Palette('purple');}
+.gray-color     {color    : Palette('gray');}
+
+i{color: inherit};
+
+h1 , h2 , h3 , h4 , h5 {margin: 15px 0px;}
+.bold           {font-weight: bold;}
+.light          {font-weight: lighter;}
+.regular        {font-weight: normal;}
+.uppercase      {text-transform: uppercase;}
+.lowercase      {text-transform: lowercase;}
+.text-left      {text-align: left;}
+.text-right      {text-align: right;}
+.text-center      {text-align: center;}
+
+.noselect {
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently
+                                    supported by Chrome and Opera */
+  }
+
+a.link-primary
+{
+    color: Palette('primary') !important;
+    text-decoration: underline !important;
+
+    &:hover
+    {
+        color: Palette('primary-hover');
+    }
+}
+/**********************/
+
+
+
+.wrapper
+{
+    width: 100%;
+    min-height: 1px;
+    margin: auto;
+    padding: 15px;
+}
+
+.content
+{
+    margin-left: auto;
+    //FIXME: Transition mixin
+    transition: 0.2s all;
+    margin-left: auto;
+    width: calc(100% - 70px);
+    overflow: hidden;
+    //FIXME:DONT FORGET ABOUT THIS
+    //position: relative;
+}
+
+.content.aside-active
+{
+    width: calc(100% - 270px) !important;
+
+}
+
+//TODO: Write ui on filters
+//TODO: Write ui on selection\submiting
+//TODO: Design and write ui on importing\exporting
+//TODO: Design and write post creation\editing
+//TODO: Design and write page creation\editing
+//TODO: Integrate tinymce in front end
+//TODO: SECOND LEVEL MENUS
+//TODO: Design and write charts page
+//TODO: Integrate ALL UIS with React.js
+
+//FIXME:Compose styles
+
+
+.table-container
+{
+    .table-meta
+    {
+        padding: 15px  30px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #fff;
+        span.data-table-pagination
+        {
+            display: flex;
+            align-content: flex-end;
+
+            a{
+                display: inline-block;
+                color: #fff;
+                text-align: center;
+                border-radius: 2px;
+                padding: 5px;
+                height: 25px;
+                margin: 0px 5px;
+                cursor: pointer;
+                font-weight: bold;
+                font-size: 0.9em;
+            }
+            a.pagination-button
+            {
+                color: #919191;
+                transition: 0.15s all;
+                &:hover
+                {
+                    background-color: #7774e7;
+                    color: #fff;
+                }
+                padding: 5px 10px;
+            }
+
+            a.pagination-button.disabled
+            {
+                color: #999999;
+            }
+            a.pagination-link
+            {
+                display: inline-block;
+                background-color: #7774e7;
+                color: #fff;
+                width: 25px;
+            }
+        }
+    }
+}
+
+
+.ui-reveal-container
+{
+    position :fixed;
+    width    : 100%;
+    height   : 100%;
+    top: 0px;
+}
+
+
+//FIXME:UI-context-menu
+
+
+ul.ui-context-menu
+{
+    width: 200px;
+    background-color: #fff;
+    position: absolute;
+    z-index: 900;
+    top: 0px;
+    left: 0px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    li.ui-context-menu-item
+    {
+        display: block;
+        background-color: #fff;
+        width: 100%;
+        padding: 10px 10px;
+        border-bottom: 1px solid #f1f1f1;
+
+        &:last-child
+        {
+            border-bottom: none;
+        }
+
+        &:hover
+        {
+            background: #f22112;
+            background: -moz-linear-gradient(top, #f22112 1%, #ff5043 100%);
+            background: -webkit-linear-gradient(top, #f22112 1%, #ff5043 100%);
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(1%, #f22112), to(#ff5043));
+            background: -o-linear-gradient(top, #f22112 1%, #ff5043 100%);
+            background: linear-gradient(to bottom, #f22112 1%, #ff5043 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f22112', endColorstr='#ff5043',GradientType=0 );
+            color: #fff;
+        }
+    }
+}
+
+//* TODO: UI CLASSES
+
+// DROPDOWN SELECT
+
+label.ui-dropdown-select
+{
+    select
+    {
+        display: none;
+    }
+
+    .dropdown-list
+    {
+        width: 100%;
+        min-height: 2px;
+        border-bottom: 1px solid Palette(gray);
+        padding: 5px 15px;
+        position: relative;
+
+        &:after
+        {
+            content : "";
+            display: block;
+            position: absolute;
+            right: 5px;
+            bottom: 2px;
+            border: 5px solid transparent;
+            border-color: #000 transparent transparent transparent;
+        }
+
+        ul.options-list
+        {
+            position: absolute;
+            top: 100%;
+            left: 0px;
+            min-width: 100%;
+            min-height: 100%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+            z-index: 900;
+            background-color: #fff;
+
+            li.list-option
+            {
+                padding: 10px 15px;
+                border-bottom: 1px solid #f9f9f9;
+                background-color: #fff;
+                &:last-child
+                {
+                    border-bottom: transparent;
+                }
+                &:hover
+                {
+                    background-color: #fafafa;
+                }
+            }
+        }
+    }
+}

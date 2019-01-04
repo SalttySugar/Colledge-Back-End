@@ -1,0 +1,110 @@
+.panel
+{
+    min-height: 60px;
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    background-color: #fff;
+    border: 1px solid #f2f2f2;
+    display: flex;
+    align-items: center;
+
+    li 
+    {
+        padding: 0px 15px;
+    }
+
+    .section-title 
+    {
+        align-self: flex-start;
+        margin-right: auto;
+    }
+
+    button.btn.danger-gradient
+    {
+        &:hover 
+        {
+            
+            border: transparent;
+            @include box-shadow(0 , 0 , 15px , rgba(126, 41, 49, 0.25));
+        }
+        
+    }
+
+}
+
+
+
+
+table
+{
+    margin-top: 15px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #f2f2f2;
+    overflow: hidden;
+}
+
+td , th , tr 
+{
+    padding: 15px;
+
+}
+
+
+tr 
+{
+    //FIXME: transition mixin
+    transition: 0.3s all;
+    width: 100%;
+    background-color: #fff;
+    border-bottom: 1px solid #f2f2f2;
+    vertical-align: middle;
+    
+
+    &:hover 
+    {
+        border-bottom: 1px solid #e1e1e1;
+        background-color: #fcfcfc;
+
+        .ui-input.row-selector
+        {
+            //FIXME:Border Colors & positioning
+            span 
+            {
+                border-color: Palette('gray') !important;
+            }
+        }
+
+    }
+
+    .ui-input.row-selector 
+    {
+        margin: 0px 5px;
+        span 
+        {
+            border-color: #fff !important;
+        }
+    }
+
+
+    &.table-header 
+    {
+
+        .ui-input.row-selector 
+        {
+            span 
+            {
+                border-color: #323232 !important;
+            }
+        }
+
+
+        &:hover 
+        {
+            background-color: #fff !important;
+            border-bottom: 1px solid #f2f2f2;
+        }
+    }
+}
+

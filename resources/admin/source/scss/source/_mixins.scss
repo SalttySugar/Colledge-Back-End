@@ -1,0 +1,42 @@
+
+@mixin respond-to($breakpoint)
+{
+    @if map-has-key($breakpoints, $breakpoint) 
+    {
+
+        @media #{inspect(map-get($breakpoints, $breakpoint))} 
+        {
+            @content;   
+        }
+
+    }
+ 
+    @else
+    {
+        @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Available breakpoints are: #{map-keys($breakpoints)}.";
+    }
+}
+
+
+@mixin border-radius($value)
+{
+    border-radius: $value;
+    -moz-border-radius: $value;
+    -o-border-radius: $value;
+    -webkit-border-radius: $value;
+}
+
+
+@mixin box-shadow($top, $left, $blur, $color, $inset: false) {
+    @if $inset {
+      -webkit-box-shadow:inset $top $left $blur $color;
+      -moz-box-shadow:inset $top $left $blur $color;
+      box-shadow:inset $top $left $blur $color;
+    } @else {
+      -webkit-box-shadow: $top $left $blur $color;
+      -moz-box-shadow: $top $left $blur $color;
+      box-shadow: $top $left $blur $color;
+    }
+  }
+  

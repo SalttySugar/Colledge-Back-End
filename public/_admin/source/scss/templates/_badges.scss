@@ -1,0 +1,12 @@
+span.danger-badge , span.success-badge , span.warning-badge,
+span.primary-badge , span.purple-badge 
+{
+    padding: 10px  15px;
+
+    @include border-radius(30px);
+}
+
+span.primary-badge { background-color: Palette('background-primary'); color: Palette('primary')}
+span.success-badge { background-color: Palette('background-success'); color: Palette('success')}
+span.warning-badge { background-color: Palette('background-warning'); color: Palette('warning')}
+span.danger-badge { background-color: Palette('background-danger');  color: Palette('danger')}

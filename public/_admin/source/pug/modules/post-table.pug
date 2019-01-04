@@ -1,0 +1,52 @@
+.wrapper 
+    ul.tools-panel 
+        li.section-title
+            h1.bold Записи 
+            h3 Нажмите что бы редактировать
+        li.search-container
+            form(action="#")
+                label.submit-input-container
+                    input(type="text" , class="rounded input" , role="search")
+                    button.btn.rounded.primary-gradient.submit
+                        i.icon-plus
+        li.filter.usable
+            i.icon-filter
+        li.import
+            button.btn.rounded <i class="icon-download"></i> Импортировать
+        li.add-record
+            button.btn.danger-gradient.rounded.bold <i class="icon-plus"></i> Добавить Запись
+                
+
+        
+    table.posts-table 
+        tbody 
+            tr.table-header
+                th.bold  
+                    label.ui-input.primary.rounded.row-selector 
+                        input(type="checkbox")
+                        span
+                    span id
+                th.bold  Заголовок
+                th.bold  Дата Добавления
+                th.bold  Дата Обновления
+                th.bold  Автор
+                th.bold  Статус
+            -for(var i = 0 ; i < 5; i++)
+                tr.usable
+                    td 
+                        label.ui-input.primary.rounded.row-selector 
+                            input(type="checkbox" name="check")
+                            span
+                        span #{i}
+                    td Музей 
+                    td 21.11.2018
+                    td Не обновлялось
+                    td 
+                        a.link-primary(href="#") Onigiri 
+                    td  
+                        //FIXME: Add class to fake "INPUT"
+                        span.danger-badge Опубликованно
+                        label.ui-input.state     
+                            input(type="checkbox")
+                            span.input
+            

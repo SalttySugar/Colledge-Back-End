@@ -1,0 +1,14 @@
+@function Padding($key)
+{
+    @return  map-get($padding , $key );
+}
+
+@function Margin($key)
+{
+    @return  map-get($margin , $key );
+}
+
+@function Palette($key) 
+{
+    @return map-get($palette , $key);
+}

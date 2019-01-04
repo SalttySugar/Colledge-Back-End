@@ -1,0 +1,99 @@
+/* START GRID */
+*
+{
+    box-sizing: border-box;
+}
+
+
+.row 
+{
+    padding: Padding(row);
+    margin: Margin(row);
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.justify-space-around {justify-content: space-around;}
+.justify-space-between {justify-content: space-between;}
+.justify-flex-end {justify-content: space-between;}
+.justify-flex-start {justify-content: space-between;}
+.justify-flex-end {justify-content: space-between;}
+
+@for $i from 1 to 13
+{
+    .col-#{$i},.col-sm-#{$i},.col-md-#{$i},.col-lg-#{$i}
+    {
+        padding: Padding(column);
+        width: 100%;
+        min-height: 1px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+
+@for $i from 1 to 13
+{
+    .col-#{$i}
+    {
+        padding: Padding(column);
+        width: ( 100%/12  ) * $i
+    }
+}
+
+
+
+@include respond-to(xs)
+{
+    @for $i from 1 to 13
+    {
+        .col-xs-#{$i}
+        {
+            width: ( 100%/12  ) * $i;
+            flex: 0 0 (( 100%/12  ) * $i);
+        }
+    }
+}
+
+@include respond-to(sm)
+{
+    @for $i from 1 to 13
+    {
+        .col-sm-#{$i}
+        {
+            width: ( 100%/12  ) * $i;
+            flex: 0 0 (( 100%/12  ) * $i);
+        }
+    }
+}
+
+
+@include respond-to(md)
+{
+    @for $i from 1 to 13
+    {
+        .col-md-#{$i}
+        {
+            padding: Padding(column);
+            width: ( 100%/12  ) * $i;
+            flex: 0 0 (( 100%/12  ) * $i);
+        }
+    }
+}
+
+@include respond-to(lg)
+{
+    @for $i from 1 to 13
+    {
+        .col-lg-#{$i}
+        {
+            padding: Padding(column);
+            width: ( 100%/12  ) * $i;
+            flex: 0 0 (( 100%/12  ) * $i);
+        }
+    }
+}
+
+
+/* END GRID*/

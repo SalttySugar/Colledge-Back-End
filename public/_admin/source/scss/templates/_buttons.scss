@@ -1,0 +1,57 @@
+button.btn 
+{
+    background-color: #eee;
+    border: 1px solid #f4f4f4;
+    padding: 10px 15px;
+    cursor: pointer;
+
+    &:focus 
+    {
+        outline: transparent;
+
+    }
+}
+
+button.btn.rounded 
+{
+    @include border-radius(20px)
+}
+
+button.btn.import
+{
+    background-color: transparent;
+    i 
+    {
+        color: Palette('primary');
+    }
+
+    &:hover 
+    {
+        color: Palette('primary');
+    }
+}
+
+button.btn.primary-gradient
+{
+    background: rgba(12,130,226,1);
+    background: -moz-linear-gradient(top, rgba(12,130,226,1) 0%, rgba(43,120,183,1) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(12,130,226,1)), color-stop(100%, rgba(43,120,183,1)));
+    background: -webkit-linear-gradient(top, rgba(12,130,226,1) 0%, rgba(43,120,183,1) 100%);
+    background: -o-linear-gradient(top, rgba(12,130,226,1) 0%, rgba(43,120,183,1) 100%);
+    background: -ms-linear-gradient(top, rgba(12,130,226,1) 0%, rgba(43,120,183,1) 100%);
+    background: linear-gradient(to bottom, rgba(12,130,226,1) 0%, rgba(43,120,183,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0c82e2', endColorstr='#2b78b7', GradientType=0 );
+    border: 1px solid Palette('primary');
+    color: #fff;
+}
+button.btn.danger-gradient
+{
+    background: #f22112; 
+    background: -moz-linear-gradient(top, #f22112 1%, #ff5043 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, #f22112 1%,#ff5043 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, #f22112 1%,#ff5043 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f22112', endColorstr='#ff5043',GradientType=0 ); /* IE6-9 */
+    color: #fff;
+    border: 1px solid Palette('danger');
+}
+

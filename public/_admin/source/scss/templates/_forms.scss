@@ -1,0 +1,81 @@
+
+.form-group 
+{
+    display: flex;
+    flex: 0 0 0 0;
+}
+
+.submit-input-container
+{
+    position: relative;
+    width: auto;
+    height: auto;
+    display: block;
+    input[type="text"].input
+    {
+        height: 30px;
+    }
+    button.submit
+    {
+        width: 30px;
+        height: 30px;
+        padding: 0px;
+        margin: 0px;
+        @include border-radius(50px);
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+}
+
+input[type="text"]
+{
+    //FIXME:PROPERTY DUPLICATION
+    background-color: transparent;
+    border: 1px solid #e1e1e1;
+    padding: 5px 15px;
+    border-radius: 25px;
+    &:focus
+    {
+        outline: transparent;
+    }
+}
+
+
+label.ui-input
+{
+
+    &.text
+    {
+        input[type="text"] 
+        {
+            //FIXME:PROPERTY DUPLICATION
+            padding: 5px 15px;
+            border: none;
+            border-bottom: 1px solid #343434;
+        }
+    }
+
+    &.text.rounded 
+    {
+        input[type="text"]
+        {
+            border: 1px solid #343434 !important;
+            border-radius: 25px;
+        }
+    }
+
+    &.dropdown.date
+    {
+        width: 80px;
+        display: flex;
+        flex-wrap:  wrap;
+    }
+
+
+    &.text.date 
+    {
+
+    }
+
+}

@@ -1,0 +1,77 @@
+header
+{
+    min-height: 65px;
+    line-height: 65px;
+    width: 100%;
+    //width: calc(100% - 70px);
+    background-color: #fff;
+    border-bottom: 1px solid #f2f2f2;
+    //position: fixed;
+    right: 0px;
+    background-color: #fff;
+    right: 0px;
+
+    .nav-left
+    {
+        display: block;
+        padding: 0px 15px;
+    }
+
+    .nav-right
+    {
+        li
+        {
+            min-width: 30px;
+        }
+    }
+
+
+    .notifications.active
+    {
+        .notifications-container
+        {
+            visibility: visible;
+            width: 360px;
+            height: 480px;
+        }
+    }
+
+
+
+
+    .nav-right
+    {
+        padding: 0px 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .user-profile
+        {
+            padding: 0px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.9em;
+
+            .user-photo
+            {
+                height: 35px;
+                width: 35px;
+                margin: 0px 15px;
+                img
+                {
+                    @include border-radius(50%);
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+

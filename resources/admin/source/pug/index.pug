@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="source/css/fontello.css", attr)
+        link(rel="stylesheet", href="style.css")
+        title Admin Panel
+    body
+        #page
+            //.ui-notification.top.success
+                        span Операция выполнена успешно
+                        -for(var i = 0; i < 40; i++)
+            //.ui-filtering-tool
+                    .wrapper
+                        //FIXME:UI SEARCH ELEMENTS
+                        form.filtering-form
+                            label.ui-input.text
+                                //FIXME:color
+                                span.bold id
+                                input(type="text" , placeholder = "ID Записи")
+                            label.ui-input.text
+                                //FIXME:color
+                                span.bold Заголовок
+                                input(type="text" , placeholder = "Заголовок..")
+                            label.ui-input.dropdown
+                                //FIXME:color
+                                span.bold Категория
+                                select
+                                    option Music
+                                    option Colledge
+                                    option Students
+                                    option Life
+                            label.ui-input.dropdown
+                                //FIXME:color
+                                span.bold Автор
+                                input(type="text" , placeholder = "Заголовок..")
+                            label.ui-input.dropdown.date
+                                //FIXME:color
+                                span.bold Дата
+                            label.ui-input.search
+                                //FIXME:color
+                                span.bold Искать
+                                input(type="text" , placeholder = "Заголовок..")
+                            button.btn.primary искать
+            //.ui-post-editor
+                .wrapper
+                    .row
+                        .col-md-6
+                            .post-meta
+                                label.ui-input.text.rounded
+                                    span Заголовок
+                                    input(placeholder="Загловок")
+                                label.ui-input.text.rounded
+                                    span Подзаголовок
+                                    input(placeholder="Загловок")
+                                label.ui-input.dropdown
+                                    span Категория
+                                    select
+                                        option students
+                                        option sport
+                                label.ui-input.tags
+                                    span Tags
+                                    input(type="text")
+                        .col-md-6
+                            .post-image
+                        .col-md-12
+                            .post-editor
+                                //FIXME:carry inline styling to css
+                                textarea(style="width:100%; resize:none; height:340px;")
+            include modules/aside
+            .content#content
+                include modules/header
+                include modules/post-table
+
+        script(src="dist/bundle.js")

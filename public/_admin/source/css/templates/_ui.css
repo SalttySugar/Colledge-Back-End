@@ -1,0 +1,15 @@
+.ui-dropdown-list {
+  position: absolute; }
+  .ui-dropdown-list .ui-dropdown-list {
+    position: relative;
+    right: 0px;
+    top: 100%;
+    width: 420px;
+    height: 280px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #e1e1e1; }
+    .ui-dropdown-list .ui-dropdown-list .ui-list-item {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex; }
