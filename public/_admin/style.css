@@ -4490,6 +4490,15 @@ tr.table-header:hover {
   border-bottom: 1px solid #f2f2f2;
 }
 
+.chart-panel {
+  width: 100%;
+  height: auto;
+  padding: 5px;
+  background-color: #fff;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
 body {
   background-color: #f6f6f6;
   color: #323232;
